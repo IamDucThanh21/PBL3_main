@@ -1,0 +1,185 @@
+﻿@using DoAn_LapTrinhWeb.Common.Helpers
+<!-- Start Header Area -->
+
+<header class="header-section d-none d-xl-block">
+    <div class="header-wrapper">
+        <div class="header-bottom header-bottom-color--yellow section-fluid sticky-header sticky-color--yellow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 align-items-center  ">
+                        <!-- Start Header Main Menu -->
+                        <div class="main-menu menu-color--black menu-hover-color--golden">
+                            <nav>
+                                <ul>
+                                    <li style="display:contents">
+                                        <div class="col-lg-5 float-left">
+                                            <!-- Start Header Logo -->
+                                            <div class="header-logo" style="display:flex">
+                                                <div class="logo">
+                                                    <a href="@Url.Action("Index","Home")">
+                                                        <img src="~/Images/logo/logo_black.png" />
+                                                    </a>
+                                                </div>
+                                                <a class="active main-menu-link py-7 px-xl-4" href="/" style="font-size: 20px;">Trang Chủ</a>
+                                                <ul>
+                                                    <li class="has-dropdown has-megaitem pt-7">
+
+                                                        <a class="active main-menu-link py-7 px-xl-4" href="/searchall"  style="font-size: 20px">Sản phẩm</a>
+                                                        <div>
+                                                            <ul class="sub-menu" style="left:auto; display:grid; min-width:auto">
+                                                                <a href="/laptop" style="font-size: 20px;">Laptop</a>
+                                                                <a href="/accessory" style="font-size: 20px;">Phụ kiện</a>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- End Header Logo -->
+                                        </div>
+                                    </li>
+
+                                    <li style="display:contents">
+                                        <div class="col-lg-4 float-left pt-7 pr-4">
+                                            <div class="text-left " style="width: 100%; background-color: #c6c5be">
+                                                <form action="@Url.Action("SearchResult", "Products")">
+                                                    <div class="input-group">
+                                                        <input autocomplete="off" class="form-control" name="s" type="search" placeholder="Nhập thông tin tại đây" />
+                                                        <button type="submit" class="btn-golden">
+                                                            <div class="input-group-append">
+                                                                <span style="padding: 6px 12px;">
+                                                                    <i class="fa fa-search"></i>
+                                                                </span>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="col-lg-3 pt-6">
+                                        <div class="align-items-center" style="font-size:18px">
+                                            <ul style="display:flex; justify-content:right">
+                                                <div class="header-action-link action-color--black action-hover-color--golden col-lg-2">
+                                                    <a href="#offcanvas-add-cart" class="offcanvas-toggle" id="goToCart">
+                                                        <i class="icon-bag"></i>
+                                                        <span class="item-count lblCartCount">0</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4" style="padding-top:8px">
+                                                    @if (User.Identity.IsAuthenticated)
+                                                    {
+                                                        if (User.Identity.GetRole() != 1)
+                                                        {
+                                                            <li class="has-dropdown has-megaitem">
+                                                                <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
+                                                                <div>
+                                                                    <ul class="sub-menu" style="left:auto">
+                                                                        <li><a href="@Url.Action("DashBoards","Admin")">Admin Panel</a></li>
+                                                                        <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                        }
+                                                        else
+                                                        {
+                                                            <li class="has-dropdown has-megaitem">
+                                                                <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
+                                                                <div>
+                                                                    <ul class="sub-menu" style="left:auto">
+                                                                        <li><a href="@Url.Action("TrackingOrder","Account")">Lịch sử mua hàng</a></li>
+                                                                        <li><a href="@Url.Action("Address","Account")">Sổ địa chỉ</a></li>
+                                                                        <li><a href="@Url.Action("ChangePassword","Account")">Đổi mật khẩu</a></li>
+                                                                        <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                        }
+
+                                                    }
+
+                                                    else
+                                                    {
+                                                        <li class="has-dropdown has-megaitem">
+                                                            <a href="@Url.Action("Login","Account")">Đăng nhập</a>
+                                                            <div>
+                                                                <ul class="sub-menu" style="left:auto">
+                                                                    <li><a href="@Url.Action("Register","Account")">Đăng ký</a></li>
+                                                                    <li><a href="@Url.Action("ForgotPassword","Account")">Quên mật khẩu</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    }
+                                                </div>
+                                                <div class="header-action-link action-color--black action-hover-color--golden pl-3 col-lg-3" style="justify-content:center">
+                                                    <a href="#offcanvas-about"
+                                                       class="offacnvas offside-about offcanvas-toggle">
+                                                        <i class="icon-menu"></i>
+                                                    </a>
+                                                </div>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Start Header Area -->
+<!-- Start Mobile Header -->
+<div class="mobile-header mobile-header-bg-color--yellow section-fluid d-lg-block d-xl-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-between">
+                <!-- Start Mobile Left Side -->
+                <div class="mobile-header-left">
+                    <ul class="mobile-menu-logo">
+                        <li>
+                            <a href="index.html">
+                                <div class="logo">
+                                    <img src="~/Images/logo/logo_black.png" style="object-fit: cover; width: 55px;" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Mobile Left Side -->
+                <!-- Start Mobile Right Side -->
+                <div class="mobile-right-side">
+                    <ul class="header-action-link action-color--black action-hover-color--golden">
+                        <li>
+                            <a href="#search">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="offcanvas-toggle">
+                                <i class="icon-heart"></i>
+                                <span class="item-count">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="offcanvas-toggle" href="#offcanvas-add-cart">
+                                <i class="icon-bag"></i>
+                                <span class="item-count lblCartCount">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mobile-menu-offcanvas"
+                               class="offcanvas-toggle offside-menu">
+                                <i class="icon-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Mobile Right Side -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Mobile Header -->
