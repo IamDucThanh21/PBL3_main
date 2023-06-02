@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict";
 
     /*****************************
@@ -10,7 +10,7 @@
     /****************************
      * Sticky Menu
      *****************************/
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
         var scroll = $(window).scrollTop();
         if (scroll < 100) {
             $(".sticky-header").removeClass("sticky");
@@ -19,7 +19,7 @@
         }
     });
 
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
         var scroll = $(window).scrollTop();
         if (scroll < 100) {
             $(".seperate-sticky-bar").removeClass("sticky");
@@ -31,14 +31,14 @@
     /************************************************
      * Modal Search 
      ***********************************************/
-    $('a[href="#search"]').on('click', function(event) {
+    $('a[href="#search"]').on('click', function (event) {
         event.preventDefault();
         $('#search').addClass('open');
         $('#search > form > input[type="search"]').focus();
     });
 
-    $('#search, #search button.close').on('click', function(event) {
-        if ( event.target.className == 'close' ) {
+    $('#search, #search button.close').on('click', function (event) {
+        if (event.target.className == 'close') {
             $(this).removeClass('open');
         }
     });
@@ -46,12 +46,12 @@
     /*****************************
      * Off Canvas Function
      *****************************/
-    (function() {
+    (function () {
         var $offCanvasToggle = $('.offcanvas-toggle'),
             $offCanvas = $('.offcanvas'),
             $offCanvasOverlay = $('.offcanvas-overlay'),
             $mobileMenuToggle = $('.mobile-menu-toggle');
-        $offCanvasToggle.on('click', function(e) {
+        $offCanvasToggle.on('click', function (e) {
             e.preventDefault();
             var $this = $(this),
                 $target = $this.attr('href');
@@ -62,7 +62,7 @@
                 $this.addClass('close');
             }
         });
-        $('.offcanvas-close, .offcanvas-overlay').on('click', function(e) {
+        $('.offcanvas-close, .offcanvas-overlay').on('click', function (e) {
             e.preventDefault();
             $body.removeClass('offcanvas-open');
             $offCanvas.removeClass('offcanvas-open');
@@ -83,7 +83,7 @@
         $offCanvasNavSubMenu.parent().prepend('<div class="offcanvas-menu-expand"></div>');
 
         /*Category Sub Menu Toggle*/
-        $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand', function(e) {
+        $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand', function (e) {
             var $this = $(this);
             if ($this.attr('href') === '#' || $this.hasClass('offcanvas-menu-expand')) {
                 e.preventDefault();
@@ -392,16 +392,16 @@
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-      });
+    });
 
-      var modalGalleryTop = new Swiper('.modal-product-image-large', { 
+    var modalGalleryTop = new Swiper('.modal-product-image-large', {
         thumbs: {
-          swiper: modalGalleryThumbs
+            swiper: modalGalleryThumbs
         }
-      });
+    });
 
     /********************************
      * Blog List Slider - Single Slide
@@ -426,17 +426,17 @@
     /************************************************
      * Price Slider
      ***********************************************/
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 500,
-        values: [75, 300],
-        slide: function(event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-    });
-    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-        " - $" + $("#slider-range").slider("values", 1));
+    //$("#slider-range").slider({
+    //    range: false,
+    //    min: 100000,
+    //    max: 5000000,
+    //    values: [100000, 5000000],
+    //    slide: function (event, ui) {
+    //        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+    //    }
+    //});
+    //$("#amount").val("$" + $("#slider-range").slider("values", 0) +
+    //    " - $" + $("#slider-range").slider("values", 1));
 
 
 
@@ -444,17 +444,17 @@
      * Animate on Scroll
      ***********************************************/
     AOS.init({
-       
-        duration: 1000, 
-        once: true, 
+
+        duration: 1000,
+        once: true,
         easing: 'ease',
     });
-    window.addEventListener('load', AOS.refresh);    
+    window.addEventListener('load', AOS.refresh);
 
     /************************************************
      * Video  Popup
      ***********************************************/
-    $('.video-play-btn').venobox(); 
+    $('.video-play-btn').venobox();
 
     /************************************************
      * Scroll Top

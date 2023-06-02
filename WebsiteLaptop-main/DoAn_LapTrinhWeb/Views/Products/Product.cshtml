@@ -46,12 +46,11 @@
                         <h6 class="sidebar-title">DANH MỤC</h6>
                         <div class="sidebar-content">
                             <ul class="sidebar-menu">
-                                <li><a href="@Url.Action("Laptop","Products")"">Laptop</a></li>
+                                <li><a href="@Url.Action("Laptop","Products")" ">Laptop</a></li>
                                 <li><a href="@Url.Action("Accessories","Products")"> Phụ kiện</a></li>
                             </ul>
                         </div>
                     </div> <!-- End Single Sidebar Widget -->
-
                     <!-- Start Single Sidebar Widget -->
                     <div class="sidebar-single-widget">
                         <h6 class="sidebar-title">Tìm Theo Giá</h6>
@@ -62,9 +61,8 @@
                                 <input type="text" id="amount">
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- End Single Sidebar Widget -->
-
                     <!-- Start Single Sidebar Widget -->
                     <div class="sidebar-single-widget">
                         <h6 class="sidebar-title">Tag Sản Phẩm</h6>
@@ -441,11 +439,49 @@
 </div> <!-- ...:::: End Shop Section:::... -->
 @section scripts{
     <script>
-            $("select.search").change(function () {
-                let getSortBy = $('#sort-for').text();
-                const selected = $(this).children("option:selected").val();
-                window.location.href = getSortBy+'sortOrder=' + selected;
-            });
-        </script>
+        $("select.search").change(function () {
+            let getSortBy = $('#sort-for').text();
+            const selected = $(this).children("option:selected").val();
+            window.location.href = getSortBy + 'sortOrder=' + selected;
+        });
+    </script>
     <script src="~/Scripts/UserJS/add-to-cart.js"></script>
+    <script>
+       $(document).ready(function() {
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 50,
+        values: [10, 30],
+        slide: function(event, ui) {
+            var minPrice = ui.values[0];
+            var maxPrice = ui.values[1];
+            $("#amount").val(minPrice + " Triệu đ" + " - " + maxPrice + " Triệu đ");
+            GetData(minPrice, maxPrice);
+            console.log("data");
+        }
+    });
+
+    $("#amount").val($("#slider-range").slider("values", 0) +
+        " Triệu đ - " + $("#slider-range").slider("values", 1) + " Triệu đ");
+
+    function GetData(minimumPrice, maximumPrice) {
+        $.ajax({
+             url: '/Products/FilterPrice',
+            data: {
+                minimumPrice: minimumPrice,
+                maximumPrice: maximumPrice
+            },
+            success: function(response) {
+                $("#Product").html(response);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Fail");
+            }
+        });
+    }
+});
+    </script>
+
+
 }
