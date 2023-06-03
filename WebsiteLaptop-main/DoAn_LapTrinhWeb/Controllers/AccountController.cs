@@ -292,20 +292,24 @@ namespace DoAn_LapTrinhWeb.Controllers
             {
                 int userID = User.Identity.GetUserId();
                 model.NewPassword = Crypto.Hash(model.NewPassword);
+                model.OldPassword = Crypto.Hash(model.OldPassword);
                 Account account = db.Accounts.FirstOrDefault(m=>m.account_id== userID);
                 if (model.NewPassword == account.password)
                 {
                     Notification.setNotification3s("Mật khẩu mới và cũ không được trùng!", "error");
                     return View(model);
                 }
-                account.update_at = DateTime.Now;
-                account.update_by = User.Identity.GetEmail();
-                account.password = model.NewPassword;
-                db.Configuration.ValidateOnSaveEnabled = false;
-                db.Entry(account).State = EntityState.Modified;
-                db.SaveChanges();
-                Notification.setNotification3s("Đổi mật khẩu thành công", "success");
-                return RedirectToAction("ChangePassword", "Account");
+                else if (model.OldPassword == account.password)
+                {
+                    account.update_at = DateTime.Now;
+                    account.update_by = User.Identity.GetEmail();
+                    account.password = model.NewPassword;
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.Entry(account).State = EntityState.Modified;
+                    db.SaveChanges();
+                    Notification.setNotification3s("Đổi mật khẩu thành công", "success");
+                    return RedirectToAction("ChangePassword", "Account");
+                }
             }
             return View(model);
         }
