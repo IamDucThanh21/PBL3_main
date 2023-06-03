@@ -24,7 +24,7 @@
                                                 <ul>
                                                     <li class="has-dropdown has-megaitem pt-7">
 
-                                                        <a class="active main-menu-link py-7 px-xl-4" href="/searchall"  style="font-size: 20px">Sản phẩm</a>
+                                                        <a class="active main-menu-link py-7 px-xl-4" href="/searchall" style="font-size: 20px">Sản phẩm</a>
                                                         <div>
                                                             <ul class="sub-menu" style="left:auto; display:grid; min-width:auto">
                                                                 <a href="/laptop" style="font-size: 20px;">Laptop</a>
@@ -71,63 +71,115 @@
                                                     {
                                                         if (User.Identity.GetRole() != 1)
                                                         {
-                                                            <li class="has-dropdown has-megaitem">
-                                                                <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
-                                                                <div>
-                                                                    <ul class="sub-menu" style="left:auto">
-                                                                        <li><a href="@Url.Action("DashBoards","Admin")">Admin Panel</a></li>
-                                                                        <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        }
-                                                        else
-                                                        {
-                                                            <li class="has-dropdown has-megaitem">
-                                                                <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
-                                                                <div>
-                                                                    <ul class="sub-menu" style="left:auto">
-                                                                        <li><a href="@Url.Action("TrackingOrder","Account")">Lịch sử mua hàng</a></li>
-                                                                        <li><a href="@Url.Action("Address","Account")">Sổ địa chỉ</a></li>
-                                                                        <li><a href="@Url.Action("ChangePassword","Account")">Đổi mật khẩu</a></li>
-                                                                        <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        }
-
-                                                    }
-
-                                                    else
-                                                    {
                                                         <li class="has-dropdown has-megaitem">
-                                                            <a href="@Url.Action("Login","Account")">Đăng nhập</a>
+                                                            <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
                                                             <div>
                                                                 <ul class="sub-menu" style="left:auto">
-                                                                    <li><a href="@Url.Action("Register","Account")">Đăng ký</a></li>
-                                                                    <li><a href="@Url.Action("ForgotPassword","Account")">Quên mật khẩu</a></li>
+                                                                    <li><a href="@Url.Action("DashBoards","Admin")">Admin Panel</a></li>
+                                                                    <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
                                                                 </ul>
                                                             </div>
                                                         </li>
                                                     }
-                                                </div>
-                                                <div class="header-action-link action-color--black action-hover-color--golden pl-3 col-lg-3" style="justify-content:center">
-                                                    <a href="#offcanvas-about"
-                                                       class="offacnvas offside-about offcanvas-toggle">
-                                                        <i class="icon-menu"></i>
-                                                    </a>
-                                                </div>
+                                                    else
+                                                    {
+                                                        <li class="has-dropdown has-megaitem">
+                                                            <a href="@Url.Action("EditProfile","Account")">@User.Identity.GetName()</a>
+                                                            <div>
+                                                                <ul class="sub-menu" style="left:auto">
+                                                                    <li><a href="@Url.Action("TrackingOrder","Account")">Lịch sử mua hàng</a></li>
+                                                                    <li><a href="@Url.Action("Address","Account")">Sổ địa chỉ</a></li>
+                                                                    <li><a href="@Url.Action("ChangePassword","Account")">Đổi mật khẩu</a></li>
+                                                                    <li><a href="@Url.Action("LogOut","Account")">Đăng xuất</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    }
 
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                                                }
+
+                                                else
+                                                {
+                                                    <li class="has-dropdown has-megaitem">
+                                                        <a href="@Url.Action("Login","Account")">Đăng nhập</a>
+                                                        <div>
+                                                            <ul class="sub-menu" style="left:auto">
+                                                                <li><a href="@Url.Action("Register","Account")">Đăng ký</a></li>
+                                                                <li><a href="@Url.Action("ForgotPassword","Account")">Quên mật khẩu</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </div>
+                                            <div class="header-action-link action-color--black action-hover-color--golden pl-3 col-lg-3" style="justify-content:center">
+                                                <a href="#offcanvas-about"
+                                                   class="offacnvas offside-about offcanvas-toggle">
+                                                    <i class="icon-menu"></i>
+                                                </a>
+                                            </div>
+
+                                    </ul>
+                            </div>
+                            </li>
+                            </ul>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+    </header>
+    <!-- Start Header Area -->
+    <!-- Start Mobile Header -->
+    <div class="mobile-header mobile-header-bg-color--yellow section-fluid d-lg-block d-xl-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-between">
+                    <!-- Start Mobile Left Side -->
+                    <div class="mobile-header-left">
+                        <ul class="mobile-menu-logo">
+                            <li>
+                                <a href="index.html">
+                                    <div class="logo">
+                                        <img src="~/Images/logo/logo_black.png" style="object-fit: cover; width: 55px;" />
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Mobile Left Side -->
+                    <!-- Start Mobile Right Side -->
+                    <div class="mobile-right-side">
+                        <ul class="header-action-link action-color--black action-hover-color--golden">
+                            <li>
+                                <a href="#search">
+                                    <i class="icon-magnifier"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="offcanvas-toggle">
+                                    <i class="icon-heart"></i>
+                                    <span class="item-count">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="offcanvas-toggle" href="#offcanvas-add-cart">
+                                    <i class="icon-bag"></i>
+                                    <span class="item-count lblCartCount">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#mobile-menu-offcanvas"
+                                   class="offcanvas-toggle offside-menu">
+                                    <i class="icon-menu"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Mobile Right Side -->
+                </div>
+            </div>
+        </div>
     </div>
-</header>
-<!-- Start Header Area -->
+    <!-- End Mobile Header -->
