@@ -200,6 +200,7 @@
     <Compile Include="Models\Account\ResetPassword.cs" />
     <Compile Include="Models\Wards.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Shared\_MessageAlert.cshtml" />
@@ -361,6 +362,7 @@
     <Content Include="Content\Images\instagram\instagram-4.jpg" />
     <Content Include="Content\Images\instagram\instagram-5.jpg" />
     <Content Include="Content\Images\instagram\instagram-6.jpg" />
+    <Content Include="Content\Images\logo\admin.jpg" />
     <Content Include="Content\Images\logo\favicon.png" />
     <Content Include="Content\Images\logo\icon.png" />
     <Content Include="Content\Images\logo\logo-white.png" />
@@ -2170,12 +2172,24 @@
     <Content Include="Images\gradian_blue.png" />
     <Content Include="Images\logo\18.png" />
     <Content Include="Images\logo\logo_black.png" />
+    <Content Include="Images\News\new001.jpg" />
+    <Content Include="Images\News\new002.jpg" />
+    <Content Include="Images\News\new003.jpg" />
+    <Content Include="Images\News\new004.jpg" />
     <Content Include="Images\Products\2022-02-04_125803.png" />
     <Content Include="Images\Products\28125179_2070640176543591_1959929278_o%281%29.jpg" />
     <Content Include="Images\Products\28125179_2070640176543591_1959929278_o.jpg" />
     <Content Include="Images\User\backgroud.jpg" />
     <Content Include="Images\User\favicon.ico" />
     <Content Include="Images\User\logo.jpg" />
+    <Content Include="Images\Vendors\vendor_ACER.jpg" />
+    <Content Include="Images\Vendors\vendor_APPLE.png" />
+    <Content Include="Images\Vendors\vendor_ASUS.jpg" />
+    <Content Include="Images\Vendors\vendor_DELL.png" />
+    <Content Include="Images\Vendors\vendor_HP.jpg" />
+    <Content Include="Images\Vendors\vendor_LENOVO.png" />
+    <Content Include="Images\Vendors\vendor_LG.jpg" />
+    <Content Include="Images\Vendors\vendor_MSI.jpg" />
     <Content Include="Images\_thumbs\Products\2022-02-04_125803.png" />
     <Content Include="Images\_thumbs\Products\28125179_2070640176543591_1959929278_o.jpg" />
     <Content Include="Images\_thumbs\Sản phẩm\2022-02-04_125803.png" />
