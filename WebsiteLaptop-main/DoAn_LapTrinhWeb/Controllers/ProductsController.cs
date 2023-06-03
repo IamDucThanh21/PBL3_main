@@ -18,6 +18,8 @@ namespace DoAn_LapTrinhWeb.Controllers
     {
         private DbContext db = new DbContext();
         public double? maxiumPrice= 600000000, minimumPrice=0;
+
+        // tìm kiếm sản phẩm theo giá
         public ActionResult FilterPrice(double? minimumPrice, double? maxiumPrice, int? page, string sortOrder)
         {
           
@@ -47,7 +49,7 @@ namespace DoAn_LapTrinhWeb.Controllers
         public ActionResult SearchAll(int? page, string sortOrder)
         {
             ViewBag.SortBy = "search?s=" + "&";
-            ViewBag.Type = "Kết quả tìm kiếm - ";
+            ViewBag.Type = "Tất cả sản phẩm";
             ViewBag.Countproduct = db.Products.Where(m => m.status == "1"&& m.price < maxiumPrice && m.price > minimumPrice).Count();
             return View("Product", GetProduct(m => m.status == "1", maxiumPrice,minimumPrice,page, sortOrder));
         }

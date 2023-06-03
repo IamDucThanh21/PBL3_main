@@ -430,6 +430,7 @@
     //    range: false,
     //    min: 100000,
     //    max: 5000000,
+    //    step: 1000000,
     //    values: [100000, 5000000],
     //    slide: function (event, ui) {
     //        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);

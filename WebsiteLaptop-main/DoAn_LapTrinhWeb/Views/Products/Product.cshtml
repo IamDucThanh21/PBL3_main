@@ -52,20 +52,22 @@
                         </div>
                     </div> <!-- End Single Sidebar Widget -->
                     <!-- Start Single Sidebar Widget -->
-                    <div class="sidebar-single-widget">
-                        <h6 class="sidebar-title">Tìm Theo Giá</h6>
-                        <div class="sidebar-content">
-                            <div id="slider-range"></div>
-                            <div class="filter-type-price">
-                                <label for="amount">Khoảng giá:</label>
-                                <input type="text" id="amount">
+                    <!--
+                        <div class="sidebar-single-widget">
+                            <h6 class="sidebar-title">Tìm Theo Giá</h6>
+                            <div class="sidebar-content">
+                                <div id="slider-range"></div>
+                                <div class="filter-type-price">
+                                    <label for="amount">Khoảng giá:</label>
+                                    <input type="text" id="amount" style="width:auto">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    -->
                     <!-- End Single Sidebar Widget -->
                     <!-- Start Single Sidebar Widget -->
                     <div class="sidebar-single-widget">
-                        <h6 class="sidebar-title">Tag Sản Phẩm</h6>
+                        <h6 class="sidebar-title">Tìm theo tag Sản Phẩm</h6>
                         <div class="sidebar-content">
                             <div class="tag-link">
                                 <form action="@Url.Action("SearchResult", "Products")">
@@ -446,41 +448,43 @@
         });
     </script>
     <script src="~/Scripts/UserJS/add-to-cart.js"></script>
+    
     <script>
-       $(document).ready(function() {
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 50,
-        values: [10, 30],
-        slide: function(event, ui) {
-            var minPrice = ui.values[0];
-            var maxPrice = ui.values[1];
-            $("#amount").val(minPrice + " Triệu đ" + " - " + maxPrice + " Triệu đ");
-            GetData(minPrice, maxPrice);
-            console.log("data");
-        }
-    });
+        $(document).ready(function() {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 50,
+                values: [1, 5],
+                slide: function (event, ui) {
+                    var minPrice = ui.values[0];
+                    var maxPrice = ui.values[1];
+                    $("#amount").val($("#slider-range").slider("values", 0) +
+                        " Triệu đ - " + $("#slider-range").slider("values", 1) + " Triệu đ");
+                    GetData(minPrice, maxPrice);
+                }
+            });
 
-    $("#amount").val($("#slider-range").slider("values", 0) +
-        " Triệu đ - " + $("#slider-range").slider("values", 1) + " Triệu đ");
+            $("#amount").val($("#slider-range").slider("values", 0) +
+                " Triệu đ - " + $("#slider-range").slider("values", 1) + " Triệu đ");
 
-    function GetData(minimumPrice, maximumPrice) {
-        $.ajax({
-             url: '/Products/FilterPrice',
-            data: {
-                minimumPrice: minimumPrice,
-                maximumPrice: maximumPrice
-            },
-            success: function(response) {
-                $("#Product").html(response);
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Fail");
+
+            function GetData(minimumPrice, maximumPrice) {
+                $.ajax({
+                    url: '/Products/FilterPrice',
+                    data: {
+                        minimumPrice: minimumPrice,
+                        maximumPrice: maximumPrice
+                    },
+                    success: function(response) {
+                        $("#Product").html(response);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("Fail");
+                    }
+                });
             }
         });
-    }
-});
     </script>
 
 

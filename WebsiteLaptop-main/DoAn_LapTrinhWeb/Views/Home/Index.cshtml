@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "KAOME - Laptop, phụ kiện chính hãng";
+    ViewBag.Title = "Shop Laptop chính hãng";
     Layout = "~/Views/Shared/Main_Layout.cshtml";
     var culture = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
     var listHostProduct = (List<DoAn_LapTrinhWeb.Models.Product>)ViewBag.HotProduct;
@@ -9,45 +9,45 @@
     var listOrderDetail = (List<DoAn_LapTrinhWeb.Model.Oder_Detail>)ViewBag.OrderDetail;
     var AvgFeedback = (List<DoAn_LapTrinhWeb.Model.Feedback>)ViewBag.AvgFeedback;
 }
-<!-- Start Hero Slider Section-->
-<div class="hero-slider-section">
-    <!-- Slider main container -->
-    <div class="hero-slider-active swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Start Hero Single Slider Item -->
-            <div class="hero-single-slider-item swiper-slide">
-                <!-- Hero Slider Image -->
-                <div class="hero-slider-bg">
-                    <img src="https://lh3.googleusercontent.com/xTnCL7cNQFHweGLUNTC5jSnnT0NRHvI7MgavTiLvaHmVeYkgjb2wl80Lszl4E20QRTcxRGhXQI2vFtMx9Hy0cut_kIXIkv52=rw-w1920"
-                         alt="image" />
-                </div>
-                <!-- Hero Slider Content -->
-                <div class="hero-slider-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="hero-slider-content">
-
-                                </div>
+<div class="product-default-slider-section section-top-gap-100 section-fluid">
+    <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
+        <div class="mb-3">
+            <div class="row px-xl-5">
+                <div class="col-lg-8">
+                    <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#header-carousel" data-slide-to="1"></li>
+                            <li data-target="#header-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item position-relative active" style="height: 343px;">
+                                <img class="position-absolute w-100 h-100" src="~/Content/Images/banner-horizonal-3.jpg" style="object-fit: cover;">
+                            </div>
+                            <div class="carousel-item position-relative" style="height: 343px;">
+                                <img class="position-absolute w-100 h-100" src="~/Content/Images/banner-horizonal-1.jpg" style="object-fit: cover;">
+                            </div>
+                            <div class="carousel-item position-relative" style="height: 343px;">
+                                <img class="position-absolute w-100 h-100" src="~/Content/Images/banner-horizonal-2.jpg" style="object-fit: cover;">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="product-offer mb-30" style="height: 200px;">
+                        <img  class="img-fluid" src="~/Content/Images/banner-mini-1.png" alt="">
+                    </div>
+                    <div class="product-offer mb-30" style="height: 200px; padding-top:25px">
+                        <img class="img-fluid" src="~/Content/Images/banner-mini-2.jpg" alt="">
+                    </div>
+                </div>
             </div>
-            <!-- End Hero Single Slider Item -->
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination active-color-golden"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev d-none d-lg-block"></div>
-        <div class="swiper-button-next d-none d-lg-block"></div>
     </div>
 </div>
-<!-- End Hero Slider Section-->
+
 <!--begin::New Product-->
-<div class="product-default-slider-section section-top-gap-100 section-fluid">
+<div class="product-default-slider-section section-top-gap-100 section-fluid" style="padding-top:50px">
     <!-- Start Section Content Text Area -->
     <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
@@ -55,7 +55,7 @@
                 <div class="col-12">
                     <div class="section-content-gap">
                         <div class="secton-content">
-                            <h3 class="section-title">Sản phẩm mới</h3>
+                            <h3 class="section-title position-relative text-uppercase mb-4"><span class="pr-3" style="background-color:white">Sản phẩm mới</span></h3>
                             <p>
                                 Đặt hàng trước ngay bây giờ để nhận ưu đãi & quà tặng độc
                                 quyền
@@ -227,7 +227,6 @@
     </div>
 </div>
 <!--end::New Product-->
-
 <!--begin:: Host Product-->
 <div class="product-default-slider-section section-top-gap-100 section-fluid section-inner-bg">
     <!-- Start Section Content Text Area -->
@@ -237,7 +236,7 @@
                 <div class="col-12">
                     <div class="section-content-gap">
                         <div class="secton-content">
-                            <h3 class="section-title">SẢN PHẨM BÁN CHẠY NHẤT</h3>
+                            <h3 class="section-title position-relative text-uppercase mb-4"><span class="pr-3">SẢN PHẨM BÁN CHẠY NHẤT</span></h3>
                             <p>
                                 Nhanh chóng cho những sản phẩm tốt nhất của chúng tôi vào
                                 giỏ hàng của bạn nào.
@@ -418,7 +417,8 @@
                 <div class="col-12">
                     <div class="section-content-gap">
                         <div class="secton-content">
-                            <h3 class="section-title">Laptop</h3>
+                            <h3 class="section-title position-relative text-uppercase mb-4"><span class="pr-3" style="background-color:white">Laptop</span></h3>
+
                         </div>
                     </div>
                 </div>
@@ -586,8 +586,9 @@
     </div>
 </div>
 <!--end::Laptop->
+
 <!--begin::Accessory-->
-<div class="product-default-slider-section section-top-gap-100 section-fluid">
+<div class="product-default-slider-section section-top-gap-100 section-fluid section-inner-bg" style="padding-bottom:20px">
     <!-- Start Section Content Text Area -->
     <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
@@ -763,83 +764,229 @@
     </div>
 </div>
 <!--end::Accessory->
+
+<!--Vendor Section Start-->
+<div class="product-default-slider-section section-top-gap-100 section-fluid ">
+    <div class="product-wrapper" data-aos="fade-up" data-aos-delay="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-slider-default-1row default-slider-nav-arrow">
+                        <!-- Slider main container -->
+                        <div class="swiper-container product-default-slider-4grid-1row">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <div class=" product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_APPLE.png" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_ACER.jpg" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_ASUS.jpg" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_DELL.png" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_HP.jpg" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_LENOVO.png" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_LG.jpg" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                                <div class="product-color--golden swiper-slide" style="width: 165px !important">
+                                    <div class="p-4">
+                                        <img src="~/Images/Vendors/vendor_MSI.jpg" alt="" style="width: 140px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Vendor Section End-->
+</div>
+
+<!--Technology News start-->
+<div class="product-default-slider-section section-top-gap-100 section-fluid section-inner-bg" style="padding-bottom:inherit">
+    <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
+        <div class="pt-5 pb-3">
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="pr-3" >Tin nổi bật</span></h2>
+        </div>
+    </div>
+    <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
+        <div class="pt-5 pb-3">
+            <div class="row px-xl-5">
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="item-news">
+                        <a class="thumnail-tintuc mr-333" href="https://www.thegioididong.com/tin-tuc/laptop-asus-tuf-gaming-4-ryzen-ra-mat-1527703">
+                            <img class="img-fluid" src="~/Images/News/new001.jpg" alt="laptop ASUS TUF GAMING" style="width: 250px; height: 141px;">
+                        </a>
+                        <div class="media-body">
+                            <div class="info-tintuc">
+                                <span class="date-create">"27 - 04 - 2023, 5:00pm"</span>
+                            </div>
+                            <div class="title-tintuc">
+                                <a href="https://www.thegioididong.com/tin-tuc/laptop-asus-tuf-gaming-4-ryzen-ra-mat-1527703">Laptop gaming ASUS TUF Gaming 4 Ryzen Edition ra mắt: Ryzen 9 7940H, RTX 4070</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="item-news">
+                        <a class="thumnail-tintuc mr-333" href="https://genk.vn/trai-nghiem-msi-cyborg-15-thiet-ke-dam-chat-cyberpunk-cau-hinh-manh-me-20230427223556419.chn">
+                            <img class="img-fluid" src="~/Images/News/new002.jpg" alt="laptop MSI Cyborg 15" style="width: 250px; height: 141px;">
+                        </a>
+                        <div class="media-body">
+                            <div class="info-tintuc">
+                                <span class="date-create">
+                                    "28 - 04 - 2023, 3:00pm"
+                                </span>
+                            </div>
+                            <div class="title-tintuc">
+                                <a href="https://genk.vn/trai-nghiem-msi-cyborg-15-thiet-ke-dam-chat-cyberpunk-cau-hinh-manh-me-20230427223556419.chn">Trải nghiệm MSI Cyborg 15: Thiết kế đậm chất cyberpunk, cấu hình mạnh mẽ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="item-news">
+                        <a class="thumnail-tintuc mr-333" href="https://genk.vn/hp-victus-la-doi-tac-pc-gaming-chinh-thuc-2023-cua-doi-tuyen-t1-2023042608253601.chn">
+                            <img class="img-fluid" src="~/Images/News/new003.jpg" alt="laptop HP victus" style="width: 250px; height: 141px;">
+                        </a>
+                        <div class="media-body">
+                            <div class="info-tintuc">
+                                <span class="date-create">
+                                    "27 - 04 - 2023, 4:00pm"
+                                </span>
+                            </div>
+                            <div class="title-tintuc">
+                                <a href="https://genk.vn/hp-victus-la-doi-tac-pc-gaming-chinh-thuc-2023-cua-doi-tuyen-t1-2023042608253601.chn">HP Victus là đối tác PC gaming chính thức 2023 của đội tuyển T1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="item-news">
+                        <a class="thumnail-tintuc mr-333" href="https://zingnews.vn/thuong-hieu-thiet-bi-microsoft-bi-loai-bo-post1426491.html">
+                            <img class="img-fluid" src="~/Images/News/new004.jpg" alt="Microsoft khai tử thương hiệu tồn tại 40 năm" style="width: 250px; height: 141px;">
+                        </a>
+                        <div class="media-body">
+                            <div class="info-tintuc">
+                                <span class="date-create">
+                                    "28 - 04 - 2023, 8:00pm"
+                                </span>
+                            </div>
+                            <div class="title-tintuc">
+                                <a href="https://zingnews.vn/thuong-hieu-thiet-bi-microsoft-bi-loai-bo-post1426491.html">Microsoft khai tử thương hiệu tồn tại 40 năm</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="pr-3"></span></h2>
+        </div>
+    </div>
+</div>
+<!--Technology News en-->
 <!-- Start Service Section -->
 <div class="service-promo-section section-top-gap-100">
     <div class="service-wrapper">
         <div class="container">
-            <div class="row">
-                <!-- Start Service Promo Single Item -->
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="service-promo-single-item"
-                         data-aos="fade-up"
-                         data-aos-delay="0">
-                        <div class="image">
-                            <img src="~/Content/Images/icons/service-promo-1.png" alt="image" />
-                        </div>
-                        <div class="content">
-                            <h6 class="title">Giao Hàng Miễn Phí</h6>
-                            <p>
-                                Giảm 10%, giao hàng miễn phí, miễn phí đổi trả, và hơn 1000+
-                                nhà bán lẽ!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Service Promo Single Item -->
-                <!-- Start Service Promo Single Item -->
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="service-promo-single-item"
-                         data-aos="fade-up"
-                         data-aos-delay="200">
-                        <div class="image">
-                            <img src="~/Content/Images/icons/service-promo-2.png" alt="image" />
-                        </div>
-                        <div class="content">
-                            <h6 class="title">HOÀN TIỀN TRONG 30 NGÀY</h6>
-                            <p>
-                                Đảm bảo sự hài lòng 100%, hoặc nhận lại tiền của bạn trong
-                                vòng 30 ngày!
-                            </p>
+            <div>
+                <div class="row">
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item"
+                             data-aos="fade-up"
+                             data-aos-delay="0">
+                            <div class="image">
+                                <img src="~/Content/Images/icons/service-promo-1.png" alt="image" />
+                            </div>
+                            <div class="content">
+                                <h6 class="title">Giao Hàng Miễn Phí</h6>
+                                <p>
+                                    Giảm 10%, giao hàng miễn phí, miễn phí đổi trả, và hơn 1000+
+                                    nhà bán lẽ!
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Service Promo Single Item -->
-                <!-- Start Service Promo Single Item -->
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="service-promo-single-item"
-                         data-aos="fade-up"
-                         data-aos-delay="400">
-                        <div class="image">
-                            <img src="~/Content/Images/icons/service-promo-3.png" alt="image" />
-                        </div>
-                        <div class="content">
-                            <h6 class="title">THANH TOÁN AN TOÀN</h6>
-                            <p>
-                                Bằng các phương thức thanh toán an toàn và phổ biến nhất
-                                trên thế giới.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Service Promo Single Item -->
-                <!-- Start Service Promo Single Item -->
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="service-promo-single-item"
-                         data-aos="fade-up"
-                         data-aos-delay="600">
-                        <div class="image">
-                            <img src="~/Content/Images/icons/service-promo-4.png" alt="image" />
-                        </div>
-                        <div class="content">
-                            <h6 class="title">KHÁCH HÀNG TRUNG THÀNH</h6>
-                            <p>
-                                Thẻ cho 30% giao dịch mua khác của bạn với tỷ lệ hoàn tiền
-                                1%.
-                            </p>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item"
+                             data-aos="fade-up"
+                             data-aos-delay="200">
+                            <div class="image">
+                                <img src="~/Content/Images/icons/service-promo-2.png" alt="image" />
+                            </div>
+                            <div class="content">
+                                <h6 class="title">HOÀN TIỀN TRONG 30 NGÀY</h6>
+                                <p>
+                                    Đảm bảo sự hài lòng 100%, hoặc nhận lại tiền của bạn trong
+                                    vòng 30 ngày!
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item"
+                             data-aos="fade-up"
+                             data-aos-delay="400">
+                            <div class="image">
+                                <img src="~/Content/Images/icons/service-promo-3.png" alt="image" />
+                            </div>
+                            <div class="content">
+                                <h6 class="title">THANH TOÁN AN TOÀN</h6>
+                                <p>
+                                    Bằng các phương thức thanh toán an toàn và phổ biến nhất
+                                    trên thế giới.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Service Promo Single Item -->
+                    <!-- Start Service Promo Single Item -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="service-promo-single-item"
+                             data-aos="fade-up"
+                             data-aos-delay="600">
+                            <div class="image">
+                                <img src="~/Content/Images/icons/service-promo-4.png" alt="image" />
+                            </div>
+                            <div class="content">
+                                <h6 class="title">KHÁCH HÀNG TRUNG THÀNH</h6>
+                                <p>
+                                    Thẻ cho 30% giao dịch mua khác của bạn với tỷ lệ hoàn tiền
+                                    1%.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Service Promo Single Item -->
                 </div>
-                <!-- End Service Promo Single Item -->
             </div>
         </div>
     </div>
